@@ -1,17 +1,27 @@
 'use client';
-import Step1 from '@/components/Step1';
-import Step2 from '@/components/Step2';
-import Step3 from '@/components/Step3';
-import Step4 from '@/components/Step4';
-import Step5 from '@/components/Step5';
-import Step6 from '@/components/Step6';
-import Step7 from '@/components/Step7';
 import Welcome from '@/components/Welcome';
-import { createContext, useState } from 'react';
+import Step1 from '@/components/steps/Step1';
+import Step2 from '@/components/steps/Step2';
+import Step3 from '@/components/steps/Step3';
+import Step4 from '@/components/steps/Step4';
+import Step5 from '@/components/steps/Step5';
+import Step6 from '@/components/steps/Step6';
+import Step7 from '@/components/steps/Step7';
+import { createContext, useEffect, useState } from 'react';
+import Data from '../../data/app_info';
+
 export const StepContext = createContext();
 
 export default function Home() {
     const [step, setStep] = useState(0);
+    const [name, setName] = useState('');
+    const [userRegion, setUserRegion] = useState('Northeast');
+    const [appData, setAppData] = useState({});
+
+    useEffect(() => {
+        //load the app data on component load
+        setAppData(Data);
+    }, [appData]);
 
     const renderStep = stepNumber => {
         switch (stepNumber) {
@@ -36,11 +46,8 @@ export default function Home() {
         }
     };
     return (
-        <StepContext.Provider value={[step, setStep]}>
-            <div className="min-h-screen">
-                {/* <Welcome /> */}
-                {renderStep(step)}
-            </div>
+        <StepContext.Provider value={[step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName]}>
+            <div className="min-h-screen">{renderStep(step)}</div>
         </StepContext.Provider>
     );
 }

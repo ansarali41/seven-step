@@ -2,18 +2,18 @@ import { StepContext } from '@/app/page';
 import { useContext } from 'react';
 
 function LeftColumn() {
-    const [step, setStep] = useContext(StepContext);
+    const [step] = useContext(StepContext);
 
     return (
         <div
-            class="flex flex-column flex-shrink-0 p-3 bg-zinc-800 text-white"
+            class="flex flex-column p-4 bg-[#212529] text-white"
             style={{
                 width: 300,
                 height: 400,
                 backgroundImage: 'url(' + './assets/headerBG.jpg' + ')',
             }}
         >
-            Explainer data for {step}
+            <p>Explainer data for Step {step}</p>
         </div>
     );
 }

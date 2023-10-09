@@ -4,7 +4,7 @@ import { StepContext } from '@/app/page';
 
 const Welcome = () => {
     const [step, setStep] = React.useContext(StepContext);
-    console.log('object step', step);
+
     return (
         <div>
             <div className="py-5 px-3">
