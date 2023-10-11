@@ -1,8 +1,8 @@
 {
     "campaign": {
         "title": "Sample Campaign",
-        "campaign_url" : "https://www.smapleCampaignUrl.com",
-        "campaign_chain" : "none",
+        "campaign_url": "https://www.smapleCampaignUrl.com",
+        "campaign_chain": "none",
         "description": "This is a sample campaign",
         "start_date": "2023-07-01",
         "end_date": "2023-07-31",
@@ -39,7 +39,7 @@
         },
         {
             "title": "Verify",
-            "main_data": "(verifyMessage) - enter your phone number and we will verify with an SMS<p><input type=\"text\" value=\"Enter your Phone Number\" onChange={handleChange} placeholder=\"Enter your phone number\" /></p>",
+            "main_data": "<p class=\"text-[16px] font-normal leading-[24px]\">(verifyMessage) - enter your phone number and we will verify with an SMS</p><p><input class=\"border border-[#4F4F4F] text-[#757575] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[250px] py-1.5\" type=\"text\" value=\"\"  placeholder=\"Enter your phone number\" /></p>",
             "main_custom_data": "this is the custom data for main which is echoed out as is",
             "button_next": "Next",
             "button_previous": "Previous",
@@ -51,7 +51,7 @@
         },
         {
             "title": "Verify",
-            "main_data": "<h1>This is Step {step}</h1>(verify enter) enter the verification code you received<p><input type=\"text\" value={name} onChange={handleChange} placeholder=\"Enter the verification code\" /></p>",
+            "main_data": "<p class=\"text-[16px] font-normal leading-[24px]\">(verify enter) enter the verification code you received</p><p><input class=\"border border-[#4F4F4F] text-[#757575] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[250px] py-1.5\"  type=\"text\" value=\"\"  placeholder=\"Enter the verification code\" /></p>",
             "main_custom_data": "this is the custom data for main which is echoed out as is",
             "button_next": "Next",
             "button_previous": "Previous",
@@ -75,7 +75,7 @@
         },
         {
             "title": "Found!",
-            "main_data": "<h1>This is Step {step}</h1>congratulations, you got a BLANK thing<br />(show the thing in a 3d viewer)<br /><img width=\"190\" src='https://images.pexels.com/photos/437345/pexels-photo-437345.jpeg?w=190' />",
+            "main_data": "congratulations, you got a BLANK thing<br />(show the thing in a 3d viewer)<br /><img width=\"190\" src='https://images.pexels.com/photos/437345/pexels-photo-437345.jpeg?w=190' />",
             "main_custom_data": "this is the custom data for main which is echoed out as is",
             "button_next": "Next",
             "button_previous": "Previous",
@@ -87,7 +87,7 @@
         },
         {
             "title": "Mint?",
-            "main_data": "show 'wallet' - this thing is now in your wallet<br />-- there is a 'MINT' option<br />-- user connects their actual wallet<br />-- estimate for mint provided - this will be 10 dollars!!<br />-- if the user has enough cash, a mint confirmation is displayed<br /><div class=\"row\"><div class=\"col-6 border bg-light\"><img src='https://images.pexels.com/photos/437345/pexels-photo-437345.jpeg?auto=compress&cs=tinysrgb&w=60' /><button class=\"m-2 btn btn-info btn-sm\">&nbsp; Mint to ETH<Safe class=\"m-2\" /></button></div>",
+            "main_data": "show 'wallet' - this thing is now in your wallet<br />-- there is a 'MINT' option<br />-- user connects their actual wallet<br />-- estimate for mint provided - this will be 10 dollars!!<br />-- if the user has enough cash, a mint confirmation is displayed<br /><div class=\"row\"><div class=\"flex border bg-light\"><img src='https://images.pexels.com/photos/437345/pexels-photo-437345.jpeg?auto=compress&cs=tinysrgb&w=60' /><button class=\"bg-[#2FD2F2] hover:bg-[#2cd6f8] py-1 px-2 rounded m-2 flex justify-center items-center\">&nbsp; Mint to ETH<Safe class=\"m-2\" /></button></div>",
             "main_custom_data": "this is the custom data for main which is echoed out as is",
             "button_next": "Next",
             "button_previous": "Previous",

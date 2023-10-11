@@ -1,5 +1,4 @@
 import { StepContext } from '@/app/page';
-import { Input } from '@nextui-org/input';
 import { useContext } from 'react';
 import BottomButtons from '../BottomButtons';
 import LeftColumn from '../LeftColumn';
@@ -7,42 +6,34 @@ import ProgressHeader from '../ProgressHeader';
 
 function Step2() {
     const [step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName] = useContext(StepContext);
-    const handleChange = event => {
-        setName(event.target.value);
+
+    // Define the handleChange function
+    const handleChange = e => {
+        // Your onChange logic here
+        console.log('Input changed: hit', e.target.value);
+    };
+
+    // Function to safely render HTML using dangerouslySetInnerHTML
+    const renderHTML = html => {
+        return { __html: html };
     };
 
     return (
         <div>
             {step === 2 && (
-                // <div class="main">
-                //     <ProgressHeader />
-                //     <div class="d-flex flex-nowrap">
-                //         <LeftColumn />
-                //         <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light flex-fill">
-                //             <h1>This is Step {step}</h1>
-                //             (verifyMessage) - enter your phone number and we will verify with an SMS
-                //             <p>
-                //                 <input type="text" value={name} onChange={handleChange} placeholder="Enter your phone number" />
-                //             </p>
-                //             <p>
-                //                 welcome to the <strong>{userRegion}</strong> region
-                //             </p>
-                //             <BottomButtons />
-                //         </div>
-                //     </div>
-                // </div>
                 <div>
                     <ProgressHeader />
                     <div className="flex">
                         <div>
-                            <LeftColumn />
+                            <LeftColumn text={appData.steps[1].left_explainer_data} />
                         </div>
 
-                        <div className="p-3 bg-[#F8F9FA] w-full">
-                            <h1 className="text-4xl font-medium leading-normal">This is Step {step}</h1>
-                            <p className="py-2">(verifyMessage) - enter your phone number and we will verify with an SMS</p>
-                            <Input type="text" variant="bordered" size="sm" label="Enter your phone number" value={name} onChange={handleChange} className="w-[350px]" />
-                            <p className="text-2xl leading-normal py-3">
+                        <div className="p-[1rem] bg-[#F8F9FA] w-full">
+                            <h1 className="text-[40px] font-medium leading-[48px] mb-[.5rem]">This is Step {step}</h1>
+
+                            <div dangerouslySetInnerHTML={renderHTML(appData.steps[1].main_data)} />
+
+                            <p className="text-[19px] font-light leading-[31px] py-3">
                                 welcome to the <strong>{userRegion}</strong> region
                             </p>
                             <BottomButtons />

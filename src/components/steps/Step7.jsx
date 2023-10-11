@@ -6,6 +6,11 @@ import ProgressHeader from '../ProgressHeader';
 
 function Step7() {
     const [step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName] = useContext(StepContext);
+
+    const renderHTML = html => {
+        return { __html: html };
+    };
+
     return (
         <div>
             {step === 7 && (
@@ -13,14 +18,14 @@ function Step7() {
                     <ProgressHeader />
                     <div className="flex">
                         <div>
-                            <LeftColumn />
+                            <LeftColumn text={appData.steps[6].left_explainer_data} />
                         </div>
 
-                        <div className="p-3 bg-[#F8F9FA] w-full">
-                            <h1 className="text-4xl font-medium leading-normal">This is Step {step}</h1>
-                            <p className="text-2xl leading-normal py-3">Hello, {name}!</p>
-                            <p className="py-2">how do I find more?</p>
-                            <p className="py-2">another tab to show participants/locations</p>
+                        <div className="p-[1rem] bg-[#F8F9FA] w-full">
+                            <h1 className="text-[40px] font-medium leading-[48px]">This is Step {step}</h1>
+                            <p className="text-[19px] font-light leading-[31px] py-3">Hello, {name}!</p>
+
+                            <div className="text-[16px] font-normal leading-[24px] my-[8px]" dangerouslySetInnerHTML={renderHTML(appData.steps[6].main_data)} />
 
                             <BottomButtons />
                         </div>

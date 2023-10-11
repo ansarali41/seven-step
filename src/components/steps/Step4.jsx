@@ -8,6 +8,12 @@ import ProgressHeader from '../ProgressHeader';
 
 function Step4() {
     const [step, setStep, userRegion, setUserRegion, appData, setAppData] = useContext(StepContext);
+
+    // Function to safely render HTML using dangerouslySetInnerHTML
+    const renderHTML = html => {
+        return { __html: html };
+    };
+
     return (
         <div>
             {step === 4 && (
@@ -16,12 +22,14 @@ function Step4() {
                         <ProgressHeader />
                         <div className="flex">
                             <div>
-                                <LeftColumn />
+                                <LeftColumn text={appData.steps[3].left_explainer_data} />
                             </div>
 
-                            <div className="p-3 bg-[#F8F9FA] w-full">
-                                <h1 className="text-4xl font-medium leading-normal">This is Step {step}</h1>
-                                <p className="py-2">(verify enter) enter the verification code you received</p>
+                            <div className="p-[1rem] bg-[#F8F9FA] w-full">
+                                <h1 className="text-[40px] font-medium leading-[48px]">This is Step {step}</h1>
+
+                                <div className="text-[16px] font-medium leading-[24px] my-[8px]" dangerouslySetInnerHTML={renderHTML(appData.steps[3].main_data)} />
+
                                 <div className="h-[220px]">
                                     <a-scene embedded>
                                         <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>

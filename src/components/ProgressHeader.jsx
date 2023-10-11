@@ -16,16 +16,16 @@ const ProgressHeader = () => {
         >
             {appData.steps.map((value, index) => {
                 index += 1;
-                let itemClass = 'flex justify-center items-center p-2 highlight rounded bg-[#6C757D] text-white font-medium';
+                let itemClass = 'flex justify-center items-center p-2 highlight rounded-md bg-[#6C757D]';
                 let stepText = 'Step ' + index;
 
                 if (index == step) {
-                    itemClass = 'flex justify-center items-center p-2 highlight flex-grow rounded bg-[#212529]  text-white font-medium';
+                    itemClass = 'flex justify-center items-center p-2 highlight flex-grow rounded-md bg-[#212529] ';
                     stepText += ' - ' + value.title;
                 }
                 return (
                     <div className={itemClass} style={{ height: 30, margin: 10 }} key={index}>
-                        <small>{stepText}</small>
+                        <p className="text-[12px] text-white font-bold">{stepText}</p>
                     </div>
                 );
             })}

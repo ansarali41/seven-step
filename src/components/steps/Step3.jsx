@@ -10,6 +10,12 @@ function Step3() {
     const handleChange = event => {
         setName(event.target.value);
     };
+
+    // Function to safely render HTML using dangerouslySetInnerHTML
+    const renderHTML = html => {
+        return { __html: html };
+    };
+
     return (
         <div>
             {step === 3 && (
@@ -17,15 +23,14 @@ function Step3() {
                     <ProgressHeader />
                     <div className="flex">
                         <div>
-                            <LeftColumn />
+                            <LeftColumn text={appData.steps[2].left_explainer_data} />
                         </div>
 
-                        <div className="p-3 bg-[#F8F9FA] w-full">
-                            <h1 className="text-4xl font-medium leading-normal">This is Step {step}</h1>
-                            <p className="py-2">(verify enter) enter the verification code you received</p>
+                        <div className="p-[1rem] bg-[#F8F9FA] w-full">
+                            <h1 className="text-[40px] font-medium leading-[48px] mb-[.5rem]">This is Step {step}</h1>
 
-                            <Input type="text" variant="bordered" size="sm" label="Enter the verification code" value={name} onChange={handleChange} className="w-[350px]" />
-                            <p className="text-2xl leading-normal py-3">Hello, {name}!</p>
+                            <div dangerouslySetInnerHTML={renderHTML(appData.steps[2].main_data)} />
+                            <p className="text-[19px] font-light leading-[31px] py-3">Hello, {name}!</p>
                             <BottomButtons />
                         </div>
                     </div>
