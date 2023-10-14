@@ -1,9 +1,4 @@
-import { StepContext } from '@/app/page';
-import { useContext } from 'react';
-
 function LeftColumn({ text }) {
-    const [step] = useContext(StepContext);
-
     return (
         <div
             className="flex flex-column p-4 bg-[#212529]"
@@ -13,7 +8,7 @@ function LeftColumn({ text }) {
                 backgroundImage: 'url(' + './assets/headerBG.jpg' + ')',
             }}
         >
-            <p className="text-white text-[16px] font-normal leading-6">{text}</p>
+            <p className="flex flex-col flex-shrink-0 text-white text-[16px] font-normal leading-6">{text}</p>
         </div>
     );
 }

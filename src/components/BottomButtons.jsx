@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { ArrowLeftCircleFill, ArrowRightCircleFill, WalletFill } from 'react-bootstrap-icons';
 
 function BottomButtons() {
-    const [step, setStep, userRegion, setUserRegion, appData, setAppData] = useContext(StepContext);
+    const { step, setStep } = useContext(StepContext);
     return (
         <div className="flex m-2">
             {step !== 1 && (
@@ -32,7 +32,7 @@ function BottomButtons() {
             {step === 7 && (
                 <Button
                     type="button"
-                    className="focus:outline-none text-white bg-[#198754] hover:bg-[#157347]  text-[14px] leading-[21px] font-normal py-[5px] px-[8px] rounded mr-2 my-2 flex justify-center items-center"
+                    className="focus:outline-none text-white bg-[#198754] hover:bg-[#157347] text-[14px] leading-[21px] font-normal py-[5px] px-[8px] rounded mr-2 my-1 flex justify-center items-center"
                     onClick={() => setStep(step + 1)}
                 >
                     &nbsp; Go to your Wallet

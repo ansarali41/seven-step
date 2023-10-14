@@ -5,13 +5,12 @@ import LeftColumn from '../LeftColumn';
 import ProgressHeader from '../ProgressHeader';
 
 function Step2() {
-    const [step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName] = useContext(StepContext);
+    const { step, userRegion, appData } = useContext(StepContext);
 
     // Define the handleChange function
-    const handleChange = e => {
-        // Your onChange logic here
-        console.log('Input changed: hit', e.target.value);
-    };
+    // const handleChange = e => {
+    //     console.log('Input changed: hit', e.target.value);
+    // };
 
     // Function to safely render HTML using dangerouslySetInnerHTML
     const renderHTML = html => {
@@ -23,12 +22,12 @@ function Step2() {
             {step === 2 && (
                 <div>
                     <ProgressHeader />
-                    <div className="flex">
+                    <div className="flex flex-nowrap">
                         <div>
                             <LeftColumn text={appData.steps[1].left_explainer_data} />
                         </div>
 
-                        <div className="p-[1rem] bg-[#F8F9FA] w-full">
+                        <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1 whitespace-no-wrap-text">
                             <h1 className="text-[40px] font-medium leading-[48px] mb-[.5rem]">This is Step {step}</h1>
 
                             <div dangerouslySetInnerHTML={renderHTML(appData.steps[1].main_data)} />

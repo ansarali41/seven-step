@@ -9,6 +9,7 @@ import Step6 from '@/components/steps/Step6';
 import Step7 from '@/components/steps/Step7';
 import { createContext, useEffect, useState } from 'react';
 import Data from '../../data/app_info';
+import Script from 'next/script';
 
 export const StepContext = createContext();
 
@@ -46,8 +47,12 @@ export default function Home() {
         }
     };
     return (
-        <StepContext.Provider value={[step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName]}>
-            <div className="min-h-screen">{renderStep(step)}</div>
+        <StepContext.Provider value={{ step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName }}>
+            <Script src="https://aframe.io/releases/1.3.0/aframe.min.js"></Script>
+            <Script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></Script>
+            <Script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></Script>
+
+            <div>{renderStep(step)}</div>
         </StepContext.Provider>
     );
 }

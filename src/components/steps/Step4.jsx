@@ -1,13 +1,13 @@
 import { StepContext } from '@/app/page';
-import 'aframe';
-import 'arjs';
+// import 'aframe';
+// import 'arjs';
 import { useContext } from 'react';
 import BottomButtons from '../BottomButtons';
 import LeftColumn from '../LeftColumn';
 import ProgressHeader from '../ProgressHeader';
 
 function Step4() {
-    const [step, setStep, userRegion, setUserRegion, appData, setAppData] = useContext(StepContext);
+    const { step, appData } = useContext(StepContext);
 
     // Function to safely render HTML using dangerouslySetInnerHTML
     const renderHTML = html => {
@@ -20,12 +20,12 @@ function Step4() {
                 <>
                     <div>
                         <ProgressHeader />
-                        <div className="flex">
+                        <div className="flex flex-nowrap">
                             <div>
                                 <LeftColumn text={appData.steps[3].left_explainer_data} />
                             </div>
 
-                            <div className="p-[1rem] bg-[#F8F9FA] w-full">
+                            <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1 whitespace-no-wrap-text">
                                 <h1 className="text-[40px] font-medium leading-[48px]">This is Step {step}</h1>
 
                                 <div className="text-[16px] font-medium leading-[24px] my-[8px]" dangerouslySetInnerHTML={renderHTML(appData.steps[3].main_data)} />

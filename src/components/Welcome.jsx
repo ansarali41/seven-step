@@ -1,9 +1,8 @@
-import { Button } from '@nextui-org/button';
-import React from 'react';
 import { StepContext } from '@/app/page';
+import React from 'react';
 
 const Welcome = () => {
-    const [step, setStep] = React.useContext(StepContext);
+    const { setStep } = React.useContext(StepContext);
 
     return (
         <div>

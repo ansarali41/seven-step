@@ -335,3 +335,9 @@ footer p a:hover {
     width: 100%;
     height: 100%;
 }
+#error-popup {
+    display: none;
+}
+.whitespace-no-wrap-text {
+    white-space: nowrap;
+}

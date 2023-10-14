@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { BellFill, CashCoin, ChatLeftHeartFill, CompassFill, HouseDoorFill, Safe, WalletFill } from 'react-bootstrap-icons';
 
 function MainAppView() {
-    const [step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName] = useContext(StepContext);
+    const { step, setStep } = useContext(StepContext);
 
     return (
         <div id="MainAppView_holder" className="MainAppView_holder">

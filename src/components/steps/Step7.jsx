@@ -5,7 +5,7 @@ import LeftColumn from '../LeftColumn';
 import ProgressHeader from '../ProgressHeader';
 
 function Step7() {
-    const [step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName] = useContext(StepContext);
+    const { step, appData, name } = useContext(StepContext);
 
     const renderHTML = html => {
         return { __html: html };
@@ -16,12 +16,12 @@ function Step7() {
             {step === 7 && (
                 <div>
                     <ProgressHeader />
-                    <div className="flex">
+                    <div className="flex flex-nowrap">
                         <div>
                             <LeftColumn text={appData.steps[6].left_explainer_data} />
                         </div>
 
-                        <div className="p-[1rem] bg-[#F8F9FA] w-full">
+                        <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1 whitespace-no-wrap-text">
                             <h1 className="text-[40px] font-medium leading-[48px]">This is Step {step}</h1>
                             <p className="text-[19px] font-light leading-[31px] py-3">Hello, {name}!</p>
 

@@ -5,7 +5,7 @@ import LeftColumn from '../LeftColumn';
 import ProgressHeader from '../ProgressHeader';
 
 function Step5() {
-    const [step, setStep, userRegion, setUserRegion, appData, setAppData, name, setName] = useContext(StepContext);
+    const { step, appData, name } = useContext(StepContext);
 
     // Function to safely render HTML using dangerouslySetInnerHTML
     const renderHTML = html => {
@@ -17,12 +17,12 @@ function Step5() {
             {step === 5 && (
                 <div>
                     <ProgressHeader />
-                    <div className="flex">
+                    <div className="flex flex-nowrap">
                         <div>
                             <LeftColumn text={appData.steps[4].left_explainer_data} />
                         </div>
 
-                        <div className="p-[1rem] bg-[#F8F9FA] w-full">
+                        <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1 whitespace-no-wrap-text">
                             <h1 className="text-[40px] font-medium leading-[48px]">This is Step {step}</h1>
 
                             <div className="text-[16px] font-normal leading-[24px] mt-[8px]" dangerouslySetInnerHTML={renderHTML(appData.steps[4].main_data)} />
