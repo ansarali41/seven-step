@@ -39,7 +39,7 @@
         },
         {
             "title": "Verify",
-            "main_data": "<p class=\"text-[16px] font-normal leading-[24px]\">(verifyMessage) - enter your phone number and we will verify with an SMS</p><p><input class=\"border border-[#4F4F4F] text-[#757575] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[250px] py-1.5\" type=\"text\" value=\"\"  placeholder=\"Enter your phone number\" /></p>",
+            "main_data": "<p class=\"text-[16px] font-normal leading-[24px]\">(verifyMessage) - enter your phone number and we will verify with an SMS</p><p><input class=\"border border-[#4F4F4F] text-[#757575] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[250px] py-1.5 px-1\" type=\"text\" value=\"\"  placeholder=\"Enter your phone number\" /></p>",
             "main_custom_data": "this is the custom data for main which is echoed out as is",
             "button_next": "Next",
             "button_previous": "Previous",
@@ -51,7 +51,7 @@
         },
         {
             "title": "Verify",
-            "main_data": "<p class=\"text-[16px] font-normal leading-[24px]\">(verify enter) enter the verification code you received</p><p><input class=\"border border-[#4F4F4F] text-[#757575] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[250px] py-1.5\"  type=\"text\" value=\"\"  placeholder=\"Enter the verification code\" /></p>",
+            "main_data": "<p class=\"text-[16px] font-normal leading-[24px]\">(verify enter) enter the verification code you received</p><p><input class=\"border border-[#4F4F4F] text-[#757575] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[250px] py-1.5 px-1\"  type=\"text\" value=\"\"  placeholder=\"Enter the verification code\" /></p>",
             "main_custom_data": "this is the custom data for main which is echoed out as is",
             "button_next": "Next",
             "button_previous": "Previous",

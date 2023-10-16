@@ -341,3 +341,7 @@ footer p a:hover {
 .whitespace-no-wrap-text {
     white-space: nowrap;
 }
+
+input {
+    width: 210px;
+}

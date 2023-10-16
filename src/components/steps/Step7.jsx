@@ -21,7 +21,7 @@ function Step7() {
                             <LeftColumn text={appData.steps[6].left_explainer_data} />
                         </div>
 
-                        <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1 whitespace-no-wrap-text">
+                        <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1">
                             <h1 className="text-[40px] font-medium leading-[48px]">This is Step {step}</h1>
                             <p className="text-[19px] font-light leading-[31px] py-3">Hello, {name}!</p>
 

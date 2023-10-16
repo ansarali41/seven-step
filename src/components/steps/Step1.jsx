@@ -14,7 +14,7 @@ const Step1 = () => {
                     <LeftColumn text={appData.steps[0].left_explainer_data} />
                 </div>
 
-                <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1 whitespace-no-wrap-text">
+                <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1">
                     <h1 className="text-[40px] font-medium leading-[48px] ">This is Step {step}</h1>
                     <h1 className="text-[40px] font-medium leading-[48px] my-[8px]">data = {appData.steps[0].title} </h1>
                     <h1 className="text-[40px] font-medium leading-[48px] my-[8px]">data = {appData.steps[0].main_data} </h1>

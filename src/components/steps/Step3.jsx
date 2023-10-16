@@ -25,7 +25,7 @@ function Step3() {
                             <LeftColumn text={appData.steps[2].left_explainer_data} />
                         </div>
 
-                        <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1 whitespace-no-wrap-text">
+                        <div className="p-[1rem] bg-[#F8F9FA] flex flex-col flex-shrink-0 flex-1">
                             <h1 className="text-[40px] font-medium leading-[48px] mb-[.5rem]">This is Step {step}</h1>
 
                             <div dangerouslySetInnerHTML={renderHTML(appData.steps[2].main_data)} />
